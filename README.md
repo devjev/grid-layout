@@ -27,6 +27,7 @@ npm run preview  # serve the production build locally
 | `minmax()` flexing track        | `src/App.module.css`              | `grid-template-columns: minmax(180px, 240px) 1fr` (+ the card grid) |
 | Media query + `grid-template-areas` | `src/App.module.css`          | the `@media (max-width: 768px)` block redrawing the area map         |
 | Container query                 | `src/components/Card.module.css`  | `container-type: inline-size` + the `@container` rule               |
+| Container query _units_ (`cqi`) | `src/components/Card.module.css`  | the card title sized with `clamp(..., 5cqi, ...)` — type scales to its slot |
 
 ## What to try in the browser
 
@@ -38,6 +39,8 @@ npm run preview  # serve the production build locally
 - **Compare the cards at one fixed window width.** The cards in `main` render
   side-by-side while the _identical_ `Card` in the sidebar stacks — because each card
   responds to its own container's width, not the viewport. That's the container query.
+  The card title also scales with its container (`cqi` units), so the same component's
+  type is larger in the wide area and smaller in the narrow sidebar.
 
 ## Stack
 
