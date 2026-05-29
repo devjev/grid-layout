@@ -15,20 +15,19 @@
   --step-2: clamp(1.44rem, 1.21rem + 1.15vw, 2.13rem);
   --step-3: clamp(1.73rem, 1.34rem + 1.93vw, 2.84rem);
 
-  --color-bg: #0f1115;
-  --color-surface: #1a1d24;
-  --color-surface-2: #232732;
-  --color-border: #2e333f;
-  --color-text: #e7e9ee;
-  --color-muted: #9aa3b2;
-  --color-accent: #6ea8fe;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #ffffff;
+  --color-border: #dcdcdc;
+  --color-text: #111111;
+  --color-muted: #555555;
+  --color-accent: #111111;
 
-  --radius: 10px;
+  --radius: 0;
 
-  color-scheme: dark;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
-  line-height: 1.5;
+  color-scheme: light;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  line-height: 1.55;
   font-size: var(--step-0);
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -89,7 +88,7 @@ code {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     "Liberation Mono", monospace;
   font-size: 0.9em;
-  background: var(--color-surface-2);
+  background: #f2f2f2;
   padding: 0.1em 0.35em;
-  border-radius: 4px;
+  border-radius: 0;
 }

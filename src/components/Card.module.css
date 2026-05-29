@@ -27,8 +27,9 @@
 .media {
   width: 84px;
   height: 84px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-accent), #b692ff);
+  border-radius: 0;
+  background: #ececec;
+  border: 1px solid var(--color-border);
 }
 
 .content {
