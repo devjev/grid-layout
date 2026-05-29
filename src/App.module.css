@@ -1,0 +1,58 @@
+/*
+ * The app shell layout.
+ *
+ * TECHNIQUE 2 of 3 — media queries + grid-template-areas to rearrange the shell.
+ * TECHNIQUE 1 also appears here — minmax() lets the sidebar column flex.
+ *
+ * The element placement is entirely a function of the ASCII area map below. To
+ * rearrange the layout we redraw that map (and the column track) inside the
+ * media query — the React markup in App.tsx stays untouched.
+ */
+.app {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 100vh;
+
+  /* minmax(): the sidebar column breathes between 180px and 240px as the window
+     changes, so we don't need a breakpoint merely to resize it. */
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/*
+ * Narrow viewport: collapse to a single column and re-map the areas so the
+ * sidebar drops BELOW main (a reorder that source-order layouts can't do
+ * cleanly). The shell responds to the *window* here, which is exactly what a
+ * media query is for.
+ */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+}

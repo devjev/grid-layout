@@ -1,0 +1,95 @@
+/*
+ * Global styles + the fluid type scale.
+ *
+ * TECHNIQUE 1 of 3 — clamp() for fluid sizing.
+ * Each --step-* below grows smoothly between a min and a max as the viewport
+ * widens, with the middle term doing the interpolation. No breakpoints are
+ * involved: the type simply "breathes" with the window. Resize the browser and
+ * watch the headings scale continuously rather than snapping at a media query.
+ */
+:root {
+  /* clamp(MIN, PREFERRED, MAX) — preferred mixes a rem floor with a vw term */
+  --step--1: clamp(0.83rem, 0.78rem + 0.25vw, 0.95rem);
+  --step-0: clamp(1rem, 0.93rem + 0.36vw, 1.2rem); /* body */
+  --step-1: clamp(1.2rem, 1.07rem + 0.66vw, 1.6rem);
+  --step-2: clamp(1.44rem, 1.21rem + 1.15vw, 2.13rem);
+  --step-3: clamp(1.73rem, 1.34rem + 1.93vw, 2.84rem);
+
+  --color-bg: #0f1115;
+  --color-surface: #1a1d24;
+  --color-surface-2: #232732;
+  --color-border: #2e333f;
+  --color-text: #e7e9ee;
+  --color-muted: #9aa3b2;
+  --color-accent: #6ea8fe;
+
+  --radius: 10px;
+
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-size: var(--step-0);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: var(--step-3);
+  line-height: 1.15;
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--step-2);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--step-1);
+  line-height: 1.25;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.9em;
+  background: var(--color-surface-2);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
