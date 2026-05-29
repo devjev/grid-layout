@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lead {
+  color: var(--color-muted);
+  max-width: var(--measure);
+}
+
+/*
+ * A fluid card grid: auto-fit + minmax means the number of columns adjusts to
+ * the available width with no media query. Each resulting cell becomes the
+ * container that the Card inside queries against.
+ */
+.grid {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
