@@ -10,8 +10,8 @@
  */
 .app {
   display: grid;
-  gap: 1rem;
-  padding: 1rem;
+  gap: var(--gutter); /* inter-field spacing = one line of leading */
+  padding: var(--page-margin); /* generous, fluid, proportional to format */
   min-height: 100vh;
 
   /* minmax(): the sidebar column breathes between 180px and 240px as the window

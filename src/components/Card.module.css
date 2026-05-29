@@ -15,10 +15,10 @@
 .card {
   display: grid;
   grid-template-columns: 84px 1fr; /* wide slot: media beside text */
-  gap: 1rem;
+  gap: var(--space-3);
   align-items: center;
   height: 100%;
-  padding: 1rem;
+  padding: var(--space-3);
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -35,7 +35,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: var(--space-1);
   min-width: 0;
 }
 

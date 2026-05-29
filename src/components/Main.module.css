@@ -1,8 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: var(--space-4);
+  padding: var(--space-4);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -11,12 +11,12 @@
 .intro {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--space-2);
 }
 
 .lead {
   color: var(--color-muted);
-  max-width: 70ch;
+  max-width: var(--measure);
 }
 
 /*
@@ -26,6 +26,6 @@
  */
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: var(--gutter);
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
